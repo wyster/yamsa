@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use function is_string;
 
 /**
+ * @todo эта реализация остаёт от OnePartFinder, нужно актуализировать
  * Альтернативная реализация, поиск несколькими регулярками
  * @author Ilya Zelenin <wyster@make.im>
  */
