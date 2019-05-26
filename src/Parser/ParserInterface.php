@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App;
-
+namespace App\Parser;
 
 /**
  * @author Ilya Zelenin <wyster@make.im>

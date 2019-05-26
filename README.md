@@ -6,4 +6,4 @@
 
 Тесты: `./phpunit.phar ./test --bootstrap=autoload.php`
 
-Бенчмарки различных вариантов регулярки: `./phpbench.phar run bench/ParserBench.php --report=aggregate`
+Бенчмарки различных вариантов регулярки: `./phpbench.phar run bench --bootstrap=autoload.php --report=aggregate`

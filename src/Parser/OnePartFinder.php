@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace App\Parser;
 
 use function count;
 use function in_array;
@@ -8,9 +8,11 @@ use InvalidArgumentException;
 use function is_string;
 
 /**
+ * @todo много копипаста между парсарми
+ * Поиск всех совпадений одной регуляркой
  * @author Ilya Zelenin <wyster@make.im>
  */
-class Parser implements ParserInterface
+class OnePartFinder implements ParserInterface
 {
     /**
      * @param string $text
