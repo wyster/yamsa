@@ -10,7 +10,7 @@ use function is_string;
 /**
  * @author Ilya Zelenin <wyster@make.im>
  */
-class Parser
+class Parser implements ParserInterface
 {
     /**
      * @param string $text
