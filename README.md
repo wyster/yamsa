@@ -4,3 +4,4 @@
 
 Запуск: `php example.php`
 
+Тесты: `./phpunit.phar ./test --bootstrap=autoload.php`

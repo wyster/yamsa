@@ -3,11 +3,7 @@
 ini_set('display_errors', 'On');
 error_reporting(-1);
 
-spl_autoload_register(static function($class) {
-    $preparedPath = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $preparedPath = str_replace('App' . DIRECTORY_SEPARATOR, '', $preparedPath);
-    include __DIR__ . '/src/' . $preparedPath . '.php';
-});
+require __DIR__ . '/autoload.php';
 
 $message = new \App\Message(new \App\Parser());
 

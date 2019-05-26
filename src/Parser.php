@@ -24,7 +24,7 @@ class Parser
             'account' => null
         ];
         $matches = [];
-        $pattern = '/(?:(?<account>\d{14})|(?<password>\d{4})|(?<sum>\d+(,?\d+))\р\.)/ui';
+        $pattern = '/(?:(?<account>\d{14})|(?<password>\d{4}\b)|(?<sum>\d+(\s?)(,?\d+))\р\.)/ui';
         preg_match_all($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
         foreach ($matches as $field => $match) {
             if (!is_string($field)) {
