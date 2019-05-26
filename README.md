@@ -5,3 +5,5 @@
 Запуск: `php example.php`
 
 Тесты: `./phpunit.phar ./test --bootstrap=autoload.php`
+
+Бенчмарки различных вариантов регулярки: `./phpbench.phar run bench/ParserBench.php --report=aggregate`
