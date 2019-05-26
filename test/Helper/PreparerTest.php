@@ -49,7 +49,9 @@ class PreparerTest extends TestCase
      */
     public function testPrepareTypes(array $expected, array $values): void
     {
+        sort($expected);
         $result = $this->preparer->prepareTypes($values);
-        $this->assertEquals($expected, $result);
+        sort($result);
+        $this->assertSame($expected, $result);
     }
 }
