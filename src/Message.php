@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 
 namespace App;
-use App\Helper\Preparer;
 
 /**
  * @author Ilya Zelenin <wyster@make.im>
@@ -9,22 +8,22 @@ use App\Helper\Preparer;
 class Message
 {
     /**
-     * @var Parser
+     * @var ParserInterface
      */
     private $parser;
 
     /**
-     * @param Parser $parser
+     * @param ParserInterface $parser
      */
-    public function __construct(Parser $parser)
+    public function __construct(ParserInterface $parser)
     {
         $this->parser = $parser;
     }
 
     /**
-     * @return Parser
+     * @return ParserInterface
      */
-    public function getParser(): Parser
+    public function getParser(): ParserInterface
     {
         return $this->parser;
     }
