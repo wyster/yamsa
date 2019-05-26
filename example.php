@@ -5,7 +5,7 @@ error_reporting(-1);
 
 require __DIR__ . '/autoload.php';
 
-$message = new \App\Message(new \App\Parser());
+$message = new \App\Message(new \App\Parser\OnePartFinder());
 
 $messages = [
     1 => <<<TEXT

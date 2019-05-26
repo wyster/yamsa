@@ -1,23 +1,24 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace App\Parser;
 
 use PHPUnit\Framework\TestCase;
 
 /**
+ * @todo много копипаста между тестами
  * @author Ilya Zelenin <wyster@make.im>
  */
-class ParserTest extends TestCase
+class OnePartFinderTest extends TestCase
 {
     /**
-     * @var Parser
+     * @var OnePartFinder
      */
     private $parser;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->parser = new Parser();
+        $this->parser = new OnePartFinder();
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Parser\ParserInterface;
+
 /**
  * @author Ilya Zelenin <wyster@make.im>
  */
