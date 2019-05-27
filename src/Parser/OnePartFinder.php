@@ -26,7 +26,7 @@ class OnePartFinder implements ParserInterface
             'account' => null
         ];
         $matches = [];
-        $pattern = '/(?:(?<sum>\d+(\s?)(,?(\d+)?))\р\.)|(?<account>\d{11,})|(?<password>\d{4})/ui';
+        $pattern = '/(?:(?<sum>\d+([\s|,]\d+)?)\р\.)|(?<account>\d{11,})|(?<password>\d{4})/ui';
         preg_match_all($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
         foreach ($matches as $field => $match) {
             if (!is_string($field)) {
