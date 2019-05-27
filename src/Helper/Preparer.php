@@ -20,7 +20,7 @@ class Preparer
      */
     public function prepareTypes(array $result): array
     {
-        $sum = str_replace([',', ' '], ['.', ''], $result['sum']);
+        $sum = str_replace([',', ' ', 'р.'], ['.', '', ''], $result['sum']);
         $account = (int)$result['account'];
         $password = (int)$result['password'];
 
