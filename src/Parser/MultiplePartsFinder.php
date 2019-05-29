@@ -37,7 +37,7 @@ class MultiplePartsFinder extends AbstractParser implements ParserInterface
             $result[$field] = $match;
         }
 
-        array_walk($result, static function(?string $value, string $field) {
+        array_walk($result, static function (?string $value, string $field) {
             if ($value === null) {
                 throw new InvalidArgumentException("Not found matches for field `${field}`");
             }

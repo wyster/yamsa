@@ -79,7 +79,7 @@ TEXT
         $randomNumber = static function (int $length) {
             $result = '';
 
-            for($i = 0; $i < $length; $i++) {
+            for ($i = 0; $i < $length; $i++) {
                 $result .= random_int(0, 9);
             }
 

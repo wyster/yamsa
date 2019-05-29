@@ -45,7 +45,7 @@ class MultiplePartsFinderMatchAll extends AbstractParser implements ParserInterf
             $result[$field] = $value;
         }
 
-        array_walk($result, static function(?string $value, string $field) {
+        array_walk($result, static function (?string $value, string $field) {
             if ($value === null) {
                 throw new InvalidArgumentException("Not found matches for field `${field}`");
             }
