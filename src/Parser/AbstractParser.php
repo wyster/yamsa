@@ -7,7 +7,7 @@ namespace App\Parser;
  */
 abstract class AbstractParser
 {
-    protected const PASSWORD_PART = '\b(?<password>\d{4})(?!\S)';
+    protected const PASSWORD_PART = '\b(?<password>\d{4,10})(?!\S)';
     protected const ACCOUNT_PART = '\b(?<account>\d{11,})(?!\S)';
     protected const SUM_PART = '(?<sum>\d+(?:[ |,](?R)|р\.))';
 
