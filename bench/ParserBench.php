@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+use App\Parser;
+
 /**
  * @Groups({"parser"})
  * @Revs(10000)
@@ -28,7 +30,7 @@ TEXT
      */
     public function benchOnePartFinder(array $text): void
     {
-        (new \App\Parser\OnePartFinder())->parse($text[0]);
+        (new Parser\OnePartFinder())->parse($text[0]);
     }
 
     /**
@@ -37,6 +39,15 @@ TEXT
      */
     public function benchMultiplePartsFinder(array $text): void
     {
-        (new \App\Parser\MultiplePartsFinder())->parse($text[0]);
+        (new Parser\MultiplePartsFinder())->parse($text[0]);
+    }
+
+    /**
+     * @ParamProviders({"data"})
+     * @param array $text
+     */
+    public function benchMultiplePartsFinderMatchAll(array $text): void
+    {
+        (new Parser\MultiplePartsFinderMatchAll())->parse($text[0]);
     }
 }

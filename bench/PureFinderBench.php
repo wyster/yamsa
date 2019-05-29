@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+use App\Parser;
+
 /**
  * @Groups({"pure"})
  * @Revs(10000)
@@ -29,8 +31,13 @@ TEXT
     public function benchOnePartFinder(array $text): void
     {
         $text = $text[0];
-        $pattern = '/(?:(?<account>\d{14})|\b(?<password>\d{4}\b)|(?<sum>\d+(\s?)(,?\d+))\р\.)/ui';
-        preg_match_all($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
+
+        $instance = new Parser\OnePartFinder();
+        $method = new ReflectionMethod($instance, 'buildPatterns');
+        $method->setAccessible(true);
+        foreach ($method->invoke($instance) as $pattern) {
+            preg_match_all($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
+        }
     }
 
     /**
@@ -40,13 +47,28 @@ TEXT
     public function benchMultiplePartFinder(array $text): void
     {
         $text = $text[0];
-        $pattern = '/\b(?<password>\d{4}\b)/ui';
-        preg_match($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
 
-        $pattern = '/(?<account>\d{14})/ui';
-        preg_match($pattern, $text, $matches2, PREG_UNMATCHED_AS_NULL);
+        $instance = new Parser\MultiplePartsFinder();
+        $method = new ReflectionMethod($instance, 'buildPatterns');
+        $method->setAccessible(true);
+        foreach ($method->invoke($instance) as $pattern) {
+            preg_match($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
+        }
+    }
 
-        $pattern = '/(?<sum>\d+(\s?)(,?\d+))\р\./ui';
-        preg_match($pattern, $text, $matches3, PREG_UNMATCHED_AS_NULL);
+    /**
+     * @ParamProviders({"data"})
+     * @param array $text
+     */
+    public function benchMultiplePartFinderMatchAll(array $text): void
+    {
+        $text = $text[0];
+
+        $instance = new Parser\MultiplePartsFinderMatchAll();
+        $method = new ReflectionMethod($instance, 'buildPatterns');
+        $method->setAccessible(true);
+        foreach ($method->invoke($instance) as $pattern) {
+            preg_match_all($pattern, $text, $matches, PREG_UNMATCHED_AS_NULL);
+        }
     }
 }

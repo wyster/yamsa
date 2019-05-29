@@ -62,13 +62,19 @@ TEXT
 TEXT
 ];
 
-foreach ($messages as $i => $item) {
+foreach ($messages as $i => $text) {
     try {
-        echo "\noutput {$i}\n";
-        $result = $message->analyze($item);
+        echo "output {$i}\n";
+        echo "\ntext:\n";
+        var_dump($text);
+        echo PHP_EOL;
+        echo 'result:';
+        echo PHP_EOL;
+        $result = $message->analyze($text);
         var_dump($result);
     } catch (Exception $e) {
         echo "error {$e->getMessage()}";
     }
-    echo "\n\n\n";
+    echo PHP_EOL;
+    echo PHP_EOL;
 }

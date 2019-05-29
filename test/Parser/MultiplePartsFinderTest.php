@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace App\Parser;
+namespace Test\Parser;
 
-use PHPUnit\Framework\TestCase;
+use App\Parser\MultiplePartsFinder;
 
 /**
  * @author Ilya Zelenin <wyster@make.im>
  */
-class MultiplePartsFinderTest extends TestCase
+class MultiplePartsFinderTest extends AbstractParser
 {
     /**
      * @var MultiplePartsFinder
@@ -18,93 +18,6 @@ class MultiplePartsFinderTest extends TestCase
     {
         parent::setUp();
         $this->parser = new MultiplePartsFinder();
-    }
-
-    /**
-     * @return array
-     */
-    public function parseDataProvider(): array
-    {
-        return [
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '234,18',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Пароль: 7740
-Спишется 234,18р.
-Перевод на счет 41001247739481
-TEXT
-            ],
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '234',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Без мелочи
-Пароль: 7740
-Спишется 234р.
-Перевод на счет 41001247739481
-TEXT
-            ],
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '234,18',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Поменял местами поля
-Перевод на счет 41001247739481
-Спишется 234,18р.
-Пароль: 7740
-TEXT
-            ],
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '1000',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Сумма списания имеет 4 знака, а вдруг посчитает её паролем?
-Поменял местами поля
-Перевод на счет 41001247739481
-Спишется 1000р.
-Пароль: 7740
-TEXT
-            ],
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '234,18',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Яндекс вдруг решил совсем не указывать текст :)
-41001247739481
-234,18р.
-7740
-TEXT
-            ],
-            [
-                [
-                    'password' => '7740',
-                    'sum' => '10 000',
-                    'account' => '41001247739481'
-                ],
-                <<<TEXT
-Вдруг есть пробел, на эмуляторе проверить не удалсь, там ошибка "Недостаточно средств.", или это один из сценариев?
-Пароль: 7740
-Спишется 10 000р.
-Перевод на счет 41001247739481
-TEXT
-            ]
-        ];
     }
 
     /**
@@ -130,20 +43,7 @@ TEXT
 Пароль: 7740
 Спишется 234,18р.
 TEXT
-            ],
-            /*[
-                // Невозможно узнать в этом случае, ищет одиночное совпадение
-                '/Too many matches for field/',
-                <<<TEXT
-Ожидаем по одному варианту каждого типа
-41001247739481
-234,18р.
-7740
-41001247739481
-234,18р.
-7740
-TEXT
-            ]*/
+            ]
         ];
     }
 
