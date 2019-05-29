@@ -8,24 +8,24 @@ namespace App;
 class Entity
 {
     /**
-     * @var string
+     * @var string|null
      */
-    private $sum;
+    private $sum = '';
 
     /**
-     * @var int
+     * @var int|null
      */
     private $password;
 
     /**
-     * @var int
+     * @var int|null
      */
     private $account;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSum(): string
+    public function getSum(): ?string
     {
         return $this->sum;
     }
@@ -39,9 +39,9 @@ class Entity
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getPassword(): int
+    public function getPassword(): ?int
     {
         return $this->password;
     }
@@ -55,9 +55,9 @@ class Entity
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getAccount(): int
+    public function getAccount(): ?int
     {
         return $this->account;
     }

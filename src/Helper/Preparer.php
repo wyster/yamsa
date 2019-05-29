@@ -16,7 +16,7 @@ class Preparer
     }
 
     /**
-     * @param array $result
+     * @param array<string> $result
      * @return array
      */
     public function prepareTypes(array $result): array

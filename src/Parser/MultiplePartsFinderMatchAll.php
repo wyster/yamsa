@@ -24,6 +24,9 @@ class MultiplePartsFinderMatchAll extends AbstractParser implements ParserInterf
             'sum' => null,
             'account' => null
         ];
+        /**
+         * @var array<array> $matches
+         */
         $matches = [];
         foreach ($this->buildPatterns() as $pattern) {
             preg_match_all($pattern, $text, $matches[], PREG_UNMATCHED_AS_NULL);
