@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wyster/yandex-money-sms-parser.svg?branch=master)](https://travis-ci.org/wyster/yandex-money-sms-parser)
+
 Требуется php версии >= 7.2
 
 Пример использования с несколькими сценариями можно найти в `example.php`
