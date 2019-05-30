@@ -1,0 +1,8 @@
+language: php
+
+php:
+   - '7.2'
+   - '7.3'
+   - nightly
+
+script: ./phpunit.phar ./test --bootstrap=autoload.php --coverage-text
