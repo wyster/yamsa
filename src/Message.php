@@ -25,7 +25,7 @@ class Message
     /**
      * @return ParserInterface
      */
-    public function getParser(): ParserInterface
+    protected function getParser(): ParserInterface
     {
         return $this->parser;
     }

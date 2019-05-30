@@ -35,7 +35,7 @@ class PreparerTest extends TestCase
                 ],
                 [
                     'password' => '7740',
-                    'sum' => '10 000,50',
+                    'sum' => '10 000,50р.',
                     'account' => '41001247739481'
                 ]
             ]

@@ -8,6 +8,7 @@ namespace App\Helper;
 class Preparer
 {
     /**
+     * @codeCoverageIgnore
      * @return self
      */
     public static function create(): self
