@@ -5,4 +5,4 @@ php:
    - '7.3'
    - nightly
 
-script: ./phpunit.phar ./test --bootstrap=autoload.php --coverage-text
+script: ./phpunit.phar --coverage-text

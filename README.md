@@ -4,7 +4,7 @@
 
 Запуск: `php example.php`
 
-Тесты: `./phpunit.phar ./test --bootstrap=autoload.php`
+Тесты: `./phpunit.phar`
 
 Бенчмарки различных вариантов регулярки: `./phpbench.phar run bench --bootstrap=autoload.php --report=aggregate`
 
