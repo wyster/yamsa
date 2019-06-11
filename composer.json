@@ -9,7 +9,9 @@
     "vimeo/psalm": "^3.4",
     "phpro/grumphp": "^0.15.2",
     "sensiolabs/security-checker": "^6.0",
-    "php-coveralls/php-coveralls": "^2.1"
+    "php-coveralls/php-coveralls": "^2.1",
+    "wearejust/grumphp-extra-tasks": "^2.2",
+    "friendsofphp/php-cs-fixer": "^2.15"
   },
   "autoload": {
     "psr-4": {

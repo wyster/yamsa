@@ -13,3 +13,6 @@ parameters:
             level: 100
             metadata:
                 priority: 99
+        php_cs_auto_fixerv2: ~
+    extensions:
+        - Wearejust\GrumPHPExtra\Extension\Loader
