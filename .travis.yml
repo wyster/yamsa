@@ -14,4 +14,4 @@ script:
    - PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/grumphp run
 
 after_success:
-   - travis_retry ./vendor/bin/php-coveralls
+   - travis_retry ./vendor/bin/php-coveralls -v
