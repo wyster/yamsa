@@ -14,5 +14,7 @@ parameters:
             metadata:
                 priority: 99
         php_cs_auto_fixerv2: ~
+        git_commit_message:
+            enforce_capitalized_subject: false
     extensions:
         - Wearejust\GrumPHPExtra\Extension\Loader
