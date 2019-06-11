@@ -6,9 +6,11 @@
 
 Запуск: `php example.php`
 
-Тесты: `./phpunit.phar`
+Для работы с dev окружением необходимо установить зависимости выполнив `composer install`
 
-Бенчмарки различных вариантов регулярки: `./phpbench.phar run bench --bootstrap=autoload.php --report=aggregate`
+Тесты: `composer test`
+
+Бенчмарки различных вариантов регулярки: `composer bench`
 
 **Сценарий**
 

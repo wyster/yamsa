@@ -5,4 +5,5 @@ php:
    - '7.3'
    - nightly
 
-script: ./phpunit.phar --coverage-text
+script:
+   - ./vendor/bin/grumphp run

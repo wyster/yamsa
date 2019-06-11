@@ -1,0 +1,15 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    tasks:
+        phpunit:
+            always_execute: true
+            metadata:
+                priority: 100
+        psalm: ~
+        securitychecker: ~
+        clover_coverage:
+            clover_file: ./clover.xml
+            level: 100
+            metadata:
+                priority: 99
