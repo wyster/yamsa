@@ -5,7 +5,7 @@ error_reporting(-1);
 
 require __DIR__ . '/autoload.php';
 
-$message = new \App\Message(new \App\Parser\OnePartFinder());
+$message = new \Yamsa\Analyzer(new \Yamsa\Parser\OnePartFinder());
 
 $messages = [
     1 => <<<TEXT
@@ -52,7 +52,7 @@ TEXT
     ,
     // Должно падать с ошибкой
     <<<TEXT
-Ожидаем по одному варианту каждого типа
+Ожидаем по одному варианту каждого поля
 41001247739481
 234,18р.
 7740
@@ -66,12 +66,12 @@ foreach ($messages as $i => $text) {
     try {
         echo "output {$i}\n";
         echo "\ntext:\n";
-        var_dump($text);
+        print_r($text);
         echo PHP_EOL;
         echo 'result:';
         echo PHP_EOL;
-        $result = $message->analyze($text);
-        var_dump($result);
+        $result = $message->run($text);
+        print_r($result);
     } catch (Exception $e) {
         echo "error {$e->getMessage()}";
     }

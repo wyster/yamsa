@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use App\Parser;
+use Yamsa\Parser;
 
 /**
  * @Groups({"parser"})

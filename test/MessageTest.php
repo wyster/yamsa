@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
-use App\Message;
-use App\Parser\AbstractParser;
-use App\Parser\OnePartFinder;
+namespace Yamsa\Test;
+
+use Yamsa\Analyzer;
+use Yamsa\Parser\AbstractParser;
+use Yamsa\Parser\OnePartFinder;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,7 +17,7 @@ class MessageTest extends TestCase
      */
     private $parserMock;
     /**
-     * @var Message
+     * @var Analyzer
      */
     private $message;
 
@@ -23,7 +25,7 @@ class MessageTest extends TestCase
     {
         parent::setUp();
         $this->parserMock = new OnePartFinder();
-        $this->message = new Message($this->parserMock);
+        $this->message = new Analyzer($this->parserMock);
     }
 
     public function testAnalyze(): void
@@ -33,7 +35,7 @@ class MessageTest extends TestCase
 Спишется 234,18р.
 Перевод на счет 41001247739481
 TEXT;
-        $entity = $this->message->analyze($message);
+        $entity = $this->message->run($message);
 
         $this->assertSame(41001247739481, $entity->getAccount());
         $this->assertSame('234.18', $entity->getSum());

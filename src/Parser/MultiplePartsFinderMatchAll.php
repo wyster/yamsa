@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Parser;
+namespace Yamsa\Parser;
 
 use function count;
 use function in_array;
@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use function is_string;
 
 /**
- * Альтернативная реализация, поиск несколькими регулярками с preg_match_all
+ * Альтернативная реализация, поиск несколькими регулярками через preg_match_all
  * @author Ilya Zelenin <wyster@make.im>
  */
 class MultiplePartsFinderMatchAll extends AbstractParser implements ParserInterface

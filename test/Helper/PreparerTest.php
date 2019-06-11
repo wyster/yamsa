@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Test;
+namespace Yamsa\Test;
 
-use App\Helper\Preparer;
+use Yamsa\Helper\Preparer;
 use PHPUnit\Framework\TestCase;
 
 /**

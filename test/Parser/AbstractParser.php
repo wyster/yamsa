@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Test\Parser;
+namespace Yamsa\Test\Parser;
 
 use PHPUnit\Framework\TestCase;
 

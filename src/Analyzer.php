@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace Yamsa;
 
-use App\Parser\ParserInterface;
+use Yamsa\Parser\ParserInterface;
 
 /**
  * @author Ilya Zelenin <wyster@make.im>
  */
-class Message
+class Analyzer
 {
     /**
      * @var ParserInterface
@@ -34,7 +34,7 @@ class Message
      * @param string $message
      * @return Entity
      */
-    public function analyze(string $message): Entity
+    public function run(string $message): Entity
     {
         $parsed = $this->getParser()->parse($message);
 

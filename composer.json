@@ -1,4 +1,19 @@
 {
+  "name": "wyster/yamsa",
+  "description": "Yandex Money SMS analyzer",
+  "keywords": [
+    "yandex",
+    "yandex money"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ilya Zelenin",
+      "email": "ilya.zelenin@make.im"
+    }
+  ],
+  "prefer-stable": true,
   "scripts": {
     "test": "phpunit",
     "bench": "phpbench run bench --bootstrap=./vendor/autoload.php --report=aggregate"
@@ -15,14 +30,16 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src"
+      "Yamsa\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Test\\": "test"
+      "Yamsa\\Test\\": "test"
     }
   },
-  "require": {
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
   }
 }

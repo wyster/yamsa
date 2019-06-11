@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Test\Parser;
+namespace Yamsa\Test\Parser;
 
-use App\Parser\MultiplePartsFinder;
+use Yamsa\Parser\MultiplePartsFinder;
 
 /**
  * @author Ilya Zelenin <wyster@make.im>

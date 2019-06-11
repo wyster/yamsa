@@ -1,20 +1,21 @@
 parameters:
-    git_dir: .
-    bin_dir: vendor/bin
-    tasks:
-        phpunit:
-            always_execute: true
-            metadata:
-                priority: 100
-        psalm: ~
-        securitychecker: ~
-        #clover_coverage:
-        #    clover_file: build/logs/clover.xml
-        #    level: 100
-        #    metadata:
-        #        priority: 99
-        php_cs_auto_fixerv2: ~
-        git_commit_message:
-            enforce_capitalized_subject: false
-    extensions:
-        - Wearejust\GrumPHPExtra\Extension\Loader
+  git_dir: .
+  bin_dir: vendor/bin
+  tasks:
+    phpunit:
+      always_execute: true
+      metadata:
+        priority: 100
+    psalm: ~
+    securitychecker: ~
+    #clover_coverage:
+    #    clover_file: build/logs/clover.xml
+    #    level: 100
+    #    metadata:
+    #        priority: 99
+    php_cs_auto_fixerv2:
+      config: .php_cs.dist
+    git_commit_message:
+      enforce_capitalized_subject: false
+  extensions:
+    - Wearejust\GrumPHPExtra\Extension\Loader
