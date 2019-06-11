@@ -10,6 +10,7 @@ install:
    - php composer.phar install --dev --no-interaction --ignore-platform-reqs
 
 script:
+   - mkdir -p build/logs
    - PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/grumphp run
 
 after_success:
