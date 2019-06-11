@@ -5,6 +5,10 @@ php:
    - '7.3'
    - nightly
 
+install:
+   - curl -s http://getcomposer.org/installer | php
+   - php composer.phar install --dev --no-interaction
+
 script:
    - ./vendor/bin/grumphp run
 
