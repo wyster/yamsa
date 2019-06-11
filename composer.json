@@ -8,7 +8,8 @@
     "phpbench/phpbench": "^0.16.9",
     "vimeo/psalm": "^3.4",
     "phpro/grumphp": "^0.15.2",
-    "sensiolabs/security-checker": "^6.0"
+    "sensiolabs/security-checker": "^6.0",
+    "php-coveralls/php-coveralls": "^2.1"
   },
   "autoload": {
     "psr-4": {

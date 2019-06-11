@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wyster/yandex-money-sms-parser.svg?branch=master)](https://travis-ci.org/wyster/yandex-money-sms-parser)
+[![Coverage Status](https://coveralls.io/repos/github/wyster/yandex-money-sms-parser/badge.svg)](https://coveralls.io/github/wyster/yandex-money-sms-parser)
 
 Требуется php версии >= 7.2
 
