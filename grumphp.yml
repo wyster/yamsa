@@ -17,5 +17,6 @@ parameters:
       config: .php_cs.dist
     git_commit_message:
       enforce_capitalized_subject: false
+    infection: ~
   extensions:
     - Wearejust\GrumPHPExtra\Extension\Loader

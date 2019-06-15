@@ -22,14 +22,15 @@
     "php": ">=7.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8",
-    "phpbench/phpbench": "^0.16.9",
-    "vimeo/psalm": "^3.4",
-    "phpro/grumphp": "^0.15.2",
-    "sensiolabs/security-checker": "^6.0",
+    "friendsofphp/php-cs-fixer": "^2.15",
+    "infection/infection": "^0.13.2",
     "php-coveralls/php-coveralls": "^2.1",
-    "wearejust/grumphp-extra-tasks": "^2.2",
-    "friendsofphp/php-cs-fixer": "^2.15"
+    "phpbench/phpbench": "^0.16.9",
+    "phpro/grumphp": "^0.15.2",
+    "phpunit/phpunit": "^8",
+    "sensiolabs/security-checker": "^6.0",
+    "vimeo/psalm": "^3.4",
+    "wearejust/grumphp-extra-tasks": "^2.2"
   },
   "autoload": {
     "psr-4": {
