@@ -4,14 +4,18 @@ php:
    - '7.2'
    - '7.3'
    - '7.4snapshot'
+   - nightly
+matrix:
+ include:
+   - php: '7.2'
+     env: GRUMPHP=1 COVERAGE=1
 
 install:
    - curl -s http://getcomposer.org/installer | php
    - php composer.phar install --dev --no-interaction --ignore-platform-reqs
 
 script:
-   - mkdir -p build/logs
-   - PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/grumphp run
+  - if [ "$GRUMPHP" = "1" ]; then ./vendor/bin/grumphp run; else composer run test; fi;
 
 after_success:
-   - ./vendor/bin/php-coveralls -v
+   - if [ "$COVERAGE" != "1" ]; then ./vendor/bin/php-coveralls -v; fi;
