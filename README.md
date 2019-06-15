@@ -1,20 +1,23 @@
-[![Build Status](https://travis-ci.org/wyster/yandex-money-sms-parser.svg?branch=master)](https://travis-ci.org/wyster/yandex-money-sms-parser)
-[![Coverage Status](https://coveralls.io/repos/github/wyster/yandex-money-sms-parser/badge.svg)](https://coveralls.io/github/wyster/yandex-money-sms-parser)
+[![Build Status](https://travis-ci.org/wyster/yamsa.svg?branch=master)](https://travis-ci.org/wyster/yamsa)
+[![Coverage Status](https://coveralls.io/repos/github/wyster/yamsa/badge.svg)](https://coveralls.io/github/wyster/yamsa)
 
 Требуется php версии >= 7.2
 
 Установка через [Composer](https://getcomposer.org/):
 ```
-composer require wyster/yamsa
+$ composer require wyster/yamsa
 ```
 
 Пример использования:
 
 ```
 <?php 
+
+use Yamsa\Factory\Analyzer;
+
 require __DIR__ . '/vendor/autoload.php';
  
-$analyzer = \Yamsa\Factory\Analyzer::create();
+$analyzer = Analyzer::create();
 $message = <<<TEXT
 Пароль: 7740
 Спишется 234,18р.
@@ -24,7 +27,7 @@ TEXT;
 print_r($analyzer->run($message)); //=> Yamsa\Entity Object
 ```
 
-Вывод:
+Результат:
 ```
 Yamsa\Entity Object
 (
