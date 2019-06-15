@@ -18,4 +18,4 @@ script:
   - if [ "$GRUMPHP" = "1" ]; then ./vendor/bin/grumphp run; else composer run test; fi;
 
 after_success:
-   - if [ "$COVERAGE" != "1" ]; then ./vendor/bin/php-coveralls -v; fi;
+   - if [ "$COVERAGE" = "1" ]; then ./vendor/bin/php-coveralls -v; fi;
