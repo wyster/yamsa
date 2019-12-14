@@ -39,8 +39,12 @@ Yamsa\Entity Object
 
 Запуск тестов:
 
-`composer test`
+```
+$ composer test
+```
 
 Покрытие (нужен xdebug)
 
-`composer coverage`
+```
+$ composer coverage
+```
