@@ -3,7 +3,6 @@
 namespace Yamsa\Parser;
 
 use function count;
-use function in_array;
 use InvalidArgumentException;
 use function is_string;
 
@@ -54,7 +53,7 @@ class OnePartFinder extends AbstractParser implements ParserInterface
     protected function buildPatterns(): array
     {
         return [
-            '/'. self::SUM_PART .'|'. self::ACCOUNT_PART .'|'. self::PASSWORD_PART .'/ui'
+            '/' . self::SUM_PART . '|' . self::ACCOUNT_PART . '|' . self::PASSWORD_PART . '/ui'
         ];
     }
 }

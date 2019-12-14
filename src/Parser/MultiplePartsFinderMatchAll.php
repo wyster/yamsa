@@ -3,7 +3,6 @@
 namespace Yamsa\Parser;
 
 use function count;
-use function in_array;
 use InvalidArgumentException;
 use function is_string;
 
@@ -57,9 +56,9 @@ class MultiplePartsFinderMatchAll extends AbstractParser implements ParserInterf
     protected function buildPatterns(): array
     {
         return [
-            '/'. self::PASSWORD_PART .'/u',
-            '/'. self::ACCOUNT_PART .'/u',
-            '/'. self::SUM_PART .'/ui'
+            '/' . self::PASSWORD_PART . '/u',
+            '/' . self::ACCOUNT_PART . '/u',
+            '/' . self::SUM_PART . '/ui'
         ];
     }
 }
