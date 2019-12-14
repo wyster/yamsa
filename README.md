@@ -11,12 +11,12 @@ $ composer require wyster/yamsa
 Пример использования:
 
 ```
-<?php 
+<?php
 
 use Yamsa\Factory\Analyzer;
 
 require __DIR__ . '/vendor/autoload.php';
- 
+
 $analyzer = Analyzer::create();
 $message = <<<TEXT
 Пароль: 7740
@@ -31,8 +31,16 @@ print_r($analyzer->run($message)); //=> Yamsa\Entity Object
 ```
 Yamsa\Entity Object
 (
-    [sum:Yamsa\Entity:private] => 234.18
-    [password:Yamsa\Entity:private] => 7740
-    [account:Yamsa\Entity:private] => 41001247739481
+    [sum:Yamsa\Entity:private] => 234.18 // string
+    [password:Yamsa\Entity:private] => 7740 // integer
+    [account:Yamsa\Entity:private] => 41001247739481 // integer
 )
 ```
+
+Запуск тестов:
+
+`composer test`
+
+Покрытие (нужен xdebug)
+
+`composer coverage`

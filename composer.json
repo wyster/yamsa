@@ -16,7 +16,8 @@
   "prefer-stable": true,
   "scripts": {
     "test": "phpunit",
-    "bench": "phpbench run bench --bootstrap=./vendor/autoload.php --report=aggregate"
+    "bench": "phpbench run bench --bootstrap=./vendor/autoload.php --report=aggregate",
+    "coverage": "phpunit --coverage-text"
   },
   "require": {
     "php": ">=7.2"
