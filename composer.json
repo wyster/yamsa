@@ -24,10 +24,10 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.15",
-    "infection/infection": "^0.13.2",
+    "infection/infection": "^0.15",
     "php-coveralls/php-coveralls": "^2.1",
-    "phpbench/phpbench": "^0.16.9",
-    "phpro/grumphp": "^0.15.2",
+    "phpbench/phpbench": "^0.16",
+    "phpro/grumphp": "^0.17",
     "phpunit/phpunit": "^8",
     "sensiolabs/security-checker": "^6.0",
     "vimeo/psalm": "^3.4",
